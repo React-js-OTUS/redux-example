@@ -84,7 +84,7 @@ type ItemsAction =
 
 const initialState: Items = [];
 
-const itemsReducer = (state = initialState, action: ItemsAction): Items => {
+export const items = (state = initialState, action: ItemsAction): Items => {
   switch (action.type) {
     case ADD_ITEM:
       return [...state, { id: Math.random().toString(16), name: '', count: 0, children: [] }];
@@ -208,8 +208,6 @@ export const itemsActions = {
   increaseChild: (payload: IncreaseChildAction['payload']): IncreaseChildAction => ({ type: INCREASE_CHILD, payload }),
   decreaseChild: (payload: DecreaseChildAction['payload']): DecreaseChildAction => ({ type: DECREASE_CHILD, payload }),
 };
-
-export default itemsReducer;
 
 export const itemsSelectors = {
   get: (state: ClassicState): ClassicState['items'] => state.items,
