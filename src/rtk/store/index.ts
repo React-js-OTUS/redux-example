@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { count } from 'src/rtk/store/count';
+import { token } from 'src/rtk/store/token';
 import { items } from './items';
 
 export const rtkStore = configureStore({
   reducer: {
     items,
+    count,
+    token,
   },
 });
 

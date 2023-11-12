@@ -2,8 +2,8 @@ import React from 'react';
 import cn from 'clsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { itemsActions, itemsSelectors } from 'src/classic/store/items';
-import { NameInput } from 'src/classic/components/NameInput';
-import { CountEditor } from 'src/classic/components/CountEditor';
+import { ItemsNameInput } from 'src/classic/components/ItemsNameInput';
+import { ItemsCountEditor } from 'src/classic/components/ItemsCountEditor';
 import s from './ItemsView.sass';
 
 export type ItemsViewProps = {
@@ -26,8 +26,8 @@ export const ItemsView = ({ className }: ItemsViewProps) => {
       {items.map((item, i) => (
         <div className={s.item} key={item.id}>
           <div>{`Пункт №${i}`}</div>
-          <NameInput index={i} />
-          <CountEditor index={i} />
+          <ItemsNameInput index={i} />
+          <ItemsCountEditor index={i} />
           <div>
             <button type="button" onClick={() => addChild(i)}>
               +
@@ -36,8 +36,8 @@ export const ItemsView = ({ className }: ItemsViewProps) => {
               {item.children.map((child, j) => (
                 <div className={s.item} key={child.id}>
                   <div>{`Подпункт №${j}`}</div>
-                  <NameInput index={j} parentIndex={i} />
-                  <CountEditor index={j} parentIndex={i} />
+                  <ItemsNameInput index={j} parentIndex={i} />
+                  <ItemsCountEditor index={j} parentIndex={i} />
                 </div>
               ))}
             </div>

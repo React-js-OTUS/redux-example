@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'clsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { itemsActions, itemsSelectors } from 'src/classic/store/items';
-import s from './NameInput.sass';
+import s from './ItemsNameInput.sass';
 
 export type NameInputProps = {
   className?: string;
@@ -10,7 +10,7 @@ export type NameInputProps = {
   index: number;
 };
 
-export const NameInput = ({ className, parentIndex, index }: NameInputProps) => {
+export const ItemsNameInput = ({ className, parentIndex, index }: NameInputProps) => {
   const dispatch = useDispatch();
   const name = useSelector(
     parentIndex !== undefined ? itemsSelectors.getChildName(parentIndex, index) : itemsSelectors.getName(index)

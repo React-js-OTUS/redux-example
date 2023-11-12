@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'clsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { itemsActions, itemsSelectors } from 'src/classic/store/items';
-import s from './CountEditor.sass';
+import s from './ItemsCountEditor.sass';
 
 export type CountEditorProps = {
   className?: string;
@@ -10,7 +10,7 @@ export type CountEditorProps = {
   index: number;
 };
 
-export const CountEditor = ({ className, parentIndex, index }: CountEditorProps) => {
+export const ItemsCountEditor = ({ className, parentIndex, index }: CountEditorProps) => {
   const dispatch = useDispatch();
   const count = useSelector(
     parentIndex !== undefined ? itemsSelectors.getChildCount(parentIndex, index) : itemsSelectors.getCount(index)
