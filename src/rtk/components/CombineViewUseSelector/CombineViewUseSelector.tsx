@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import cn from 'clsx';
 import { useSelector } from 'react-redux';
 import { tokenSelectors } from 'src/rtk/store/token';
@@ -51,37 +51,6 @@ export const CombineViewUseSelector3 = ({ className }: CombineViewUseSelectorPro
   return (
     <div className={cn(s.root, className)}>
       <div>CombineViewUseSelector 3</div>
-      <div>token</div>
-      <div>{token}</div>
-      <div>count</div>
-      <div>{count}</div>
-    </div>
-  );
-};
-
-export const CombineViewUseSelector4 = ({ className }: CombineViewUseSelectorProps) => {
-  const selector = useCallback((state: RtkState) => ({ token: state.token, count: state.count }), []);
-  console.log('render: CombineViewUseSelector4');
-  const { token, count } = useSelector(selector);
-
-  return (
-    <div className={cn(s.root, className)}>
-      <div>CombineViewUseSelector 4</div>
-      <div>token</div>
-      <div>{token}</div>
-      <div>count</div>
-      <div>{count}</div>
-    </div>
-  );
-};
-const selector = (state: RtkState) => ({ token: state.token, count: state.count });
-export const CombineViewUseSelector5 = ({ className }: CombineViewUseSelectorProps) => {
-  console.log('render: CombineViewUseSelector5');
-  const { token, count } = useSelector(selector);
-
-  return (
-    <div className={cn(s.root, className)}>
-      <div>CombineViewUseSelector 5</div>
       <div>token</div>
       <div>{token}</div>
       <div>count</div>

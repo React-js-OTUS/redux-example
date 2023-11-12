@@ -18,8 +18,6 @@ import {
   CombineViewUseSelector1,
   CombineViewUseSelector2,
   CombineViewUseSelector3,
-  CombineViewUseSelector4,
-  CombineViewUseSelector5,
 } from 'src/rtk/components/CombineViewUseSelector';
 import s from './App.sass';
 
@@ -55,8 +53,6 @@ function App() {
         <CombineViewUseSelector1 />
         <CombineViewUseSelector2 />
         <CombineViewUseSelector3 />
-        <CombineViewUseSelector4 />
-        <CombineViewUseSelector5 />
       </Provider>
     </div>
   );
