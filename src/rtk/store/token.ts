@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RtkState } from 'src/rtk/store/index';
-import { countActions } from '../store/count';
+import { countActions } from './count';
 
 const tokenSlice = createSlice({
   name: 'token',
